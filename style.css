@@ -1,0 +1,256 @@
+/* Import de la police Google 'Poppins' avec un poids de 500 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Réinitialisation des marges, paddings et utilisation de la police 'Poppins' pour l'ensemble du document */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Configuration pour un défilement fluide sur la page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style global pour le corps de la page */
+body {
+    background-color: #e9ecef;
+    position: relative;
+}
+
+/* Style pour les spans (éléments surlignés en couleur #004AAD) */
+span {
+    color: #4a4747;
+    font-size: 20px;
+}
+
+/* Style pour l'en-tête de la page */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    height: 80PX;
+}
+
+/* Style pour le logo dans l'en-tête */
+header .logo {
+    color: #000000;
+}
+
+/* Style pour la barre de menu dans l'en-tête */
+header .menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Style pour chaque élément de la liste du menu dans l'en-tête */
+header .menu li {
+    margin: 0 15px;
+    list-style: none;
+}
+
+/* Style pour les liens du menu dans l'en-tête */
+header .menu li a {
+    color: #999;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    position: relative;
+    transition: 0.5s;
+}
+
+/* Style pour les liens du menu au survol de la souris */
+header .menu li a:hover {
+    color: #000000;
+    font-size: 18px;
+}
+
+/* Style pour l'effet de soulignement des liens du menu */
+header .menu li a::before {
+    position: absolute;
+    bottom: -5px;
+    content: "";
+    width: 0%;
+    height: 5px;
+    border-radius: 6px;
+    transition: 0.5s;
+    background-color: green;
+}
+
+/* Style pour l'effet de soulignement au survol des liens du menu */
+header .menu li a:hover::before {
+    width: 100%;
+}
+
+/* Style pour la section principale de la page */
+section {
+    height: calc(100vh - 80px);
+    align-items: center;
+    padding: 0 10%;
+    display: flex;
+}
+
+/* Style pour la partie gauche de la section */
+.left {
+    width: 45%;
+}
+
+/* Style pour la ligne de séparation */
+.left hr {
+    width: 100px;
+    margin: 20px 0;
+    background-color: green;
+    border: 0;
+    height: 5px;
+    border-radius: 6px;
+}
+
+/* Style pour le titre principal */
+.left h3 {
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Style pour le texte descriptif */
+.left p {
+    color: #999;
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+/* Style pour chaque icône sociale dans la liste */
+.icons li {
+    margin: 15px 0;
+}
+
+/* Style pour les icônes au survol de la souris */
+.icons li i {
+    color: green;
+    font-size: 20px;
+    border: 2px solid green;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 25PX;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Style pour les icônes au survol de la souris */
+.icons li i:hover {
+    background-color: #004AAD;
+    color: #fff;
+    transform: scale(1.5);
+    color: #fff;
+}
+
+/* Style pour la partie droite de la section */
+.right {
+    width: 50%;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    height: 75%;
+}
+
+/* Style pour l'image à l'intérieur de la partie droite de la section */
+.right img {
+    height: 80%;
+    width: 80%;
+}
+
+/* Media query pour les écrans de taille maximale de 904 pixels */
+@media (max-width: 904px) {
+    /* Ajustements pour le padding de l'en-tête */
+    header {
+        padding: 0 5%;
+    }
+    /* Masquer le menu principal lorsque la largeur de l'écran est réduite */
+    header .menu {
+        display: none;
+    }
+
+    /* Ajustements pour la section principale en mode responsive */
+    section {
+        margin-top: 100px;
+        flex-direction: column;
+    }
+
+    /* Ajustements pour les parties gauche et droite de la section en mode responsive */
+    section .left, section .right {
+        width: 100%;
+    }
+
+    /* Style du bouton de menu (icône de barre) en mode responsive */
+    .toggle-menu {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+    }
+
+    /* Style des lignes du bouton de menu en mode responsive */
+    .toggle-menu::before {
+        position: absolute;
+        content: "";
+        height: 5px;
+        width: 25px;
+        background-color: #fff;
+        border-radius: 6px;
+        box-shadow: 0 10px 0 #fff;
+        transform: translateY(-10px);
+        transition: 0.5s;
+    }
+
+    /* Animation des lignes du bouton de menu lorsqu'il est actif */
+    .toggle-menu.active::before {
+        transform: translateY(0) rotate(-45deg);
+        box-shadow: 0 0px 0 #fff;
+    }
+
+    /* Style des lignes du bouton de menu en mode responsive */
+    .toggle-menu::after {
+        position: absolute;
+        content: "";
+        height: 5px;
+        width: 25px;
+        background-color: #fff;
+        border-radius: 6px;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+
+    /* Animation des lignes du bouton de menu lorsqu'il est actif */
+    .toggle-menu.active::after {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    /* Style du menu en mode responsive */
+    header .menu.responsive {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Ajustements pour chaque élément de la liste du menu en mode responsive */
+    header .menu.responsive li {
+        margin: 25px 0;
+    }
+}
